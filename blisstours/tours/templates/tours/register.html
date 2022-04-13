@@ -1,0 +1,22 @@
+{% extends 'tours/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <p><label class="form-label">{{ form.username.label_tag }}</label>{{ form.username }}</p>
+    <div class="form-error">{{ form.username.errors }}</div>
+
+    <p><label class="form-label">{{ form.email.label_tag }}</label>{{ form.email }}</p>
+    <div class="form-error">{{ form.email.errors }}</div>
+
+    <p><label class="form-label">{{ form.password1.label_tag }}</label>{{ form.password1 }}</p>
+    <div class="form-error">{{ form.password1.errors }}</div>
+
+    <p><label class="form-label">{{ form.password2.label_tag }}</label>{{ form.password2 }}</p>
+    <div class="form-error">{{ form.password2.errors }}</div>
+    <button type="submit">Регистрация</button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'tours/base.html' %}
+
+{% block content %}
+<h1>{{tour.title}}</h1>
+
+{% if tour.photo %}
+<p><img class="img-article-left" src="{{ tour.photo.url }}"></p>
+{% endif %}
+
+{{tour.content|linebreaks}}
+{% endblock %}

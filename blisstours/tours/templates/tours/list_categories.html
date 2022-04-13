@@ -1,0 +1,9 @@
+{% for cat in cats %}
+{% if cat.tours__count > 0 %}
+    {% if cat_selected.slug == cat.slug %}
+        <li class="selected">{{cat.name}}</li>
+    {% else %}
+        <li><a href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
+    {% endif%}
+{% endif%}
+{% endfor %}
